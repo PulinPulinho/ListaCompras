@@ -55,43 +55,56 @@ function createCard() {
     newItemCard.style.overflow = "hidden";
     newItemCard.style.whiteSpace = "nowrap";
     newItemCard.style.marginLeft = "3vw";
-    newItemCard.style.width = "25vw";
-    /*newItemCard.style.border = "solid 3px red";*/
+    newItemCard.style.width = "55%";
     newItemCard.textContent = productName;
 
     // Create counter container
     const productCounter = document.createElement("div");
     productCounter.style.alignItems = "center";
+    productCounter.style.height = "100%";
     productCounter.classList.add("product-counter");
 
     // Create plus button
     const plusBtn = document.createElement("div");
-    plusBtn.classList.add("counter-btn");
+    plusBtn.style.cssText = document.getElementById("plus-sign").style.cssText;
     plusBtn.textContent = "+";
     plusBtn.style.textAlign = "center";
-    plusBtn.style.margin = "2vw";
-    plusBtn.style.width = "6vw";
+    plusBtn.style.margin = "1.5%";
+    plusBtn.style.width = "400%";
+    plusBtn.style.height = "50%";
     plusBtn.style.border = "1px solid grey";
     plusBtn.style.borderRadius = "50%";
     plusBtn.style.backgroundColor = "antiquewhite";
+    plusBtn.style.display = "flex";
+    plusBtn.style.flexDirection = "column";
+    plusBtn.style.alignItems = "center";
+    plusBtn.style.justifyContent = "center";
     plusBtn.id = `plus-sign${cardCounter}`;
 
     // Create product number display
     const productNumDisplay = document.createElement("div");
-    productNumDisplay.classList.add("product-number");
+    productNumDisplay.style.textAlign = "center";
+    productNumDisplay.style.width = "500%";
+    productNumDisplay.style.margin = "1.5%";
     productNumDisplay.id = `product-number${cardCounter}`;
     productNumDisplay.textContent = productNumber.textContent;
 
     // Create minus button
     const minusBtn = document.createElement("div");
+    minusBtn.style.cssText = document.getElementById("minus-sign").style.cssText;
     minusBtn.classList.add("counter-btn");
     minusBtn.textContent = "-";
     minusBtn.style.textAlign = "center";
-    minusBtn.style.margin = "2vw";
-    minusBtn.style.width = "6vw";
+    minusBtn.style.margin = "1.5%";
+    minusBtn.style.width = "400%";
+    minusBtn.style.height = "50%";
     minusBtn.style.border = "1px solid grey";
     minusBtn.style.borderRadius = "50%";
     minusBtn.style.backgroundColor = "antiquewhite";
+    minusBtn.style.display = "flex";
+    minusBtn.style.flexDirection = "column";
+    minusBtn.style.alignItems = "center";
+    minusBtn.style.justifyContent = "center";
     minusBtn.id = `minus-sign${cardCounter}`;
     
     // Create "X" symbol
@@ -102,6 +115,7 @@ function createCard() {
     closeBtn.classList.add("close-btn");
     closeBtn.style.color = "red";
     closeBtn.style.marginLeft = "2vw";
+    closeBtn.style.marginTop = "1%";
     closeBtn.addEventListener("click", () => {
       // Remove the card when the X button is clicked
       newCard.remove();
@@ -118,10 +132,6 @@ function createCard() {
     newContainer.appendChild(closeBtn);
     cardsContainer.insertBefore(newContainer, document.getElementById("list-item-creator"));
     
-    
-    
-    
-
     // Reset input value
     productNameInput.value = "";
     // Reset product number
