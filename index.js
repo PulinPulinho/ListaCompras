@@ -52,6 +52,7 @@ function createCard() {
     // Create card content
     const newItemCard = document.createElement("div");
     newItemCard.id = `item-creator-card${cardCounter}`;
+    newItemCard.style.textAlign = "center";
     newItemCard.style.overflow = "hidden";
     newItemCard.style.whiteSpace = "nowrap";
     newItemCard.style.marginLeft = "3vw";
@@ -114,8 +115,8 @@ function createCard() {
     closeBtn.style.fontSize = "10vw";
     closeBtn.classList.add("close-btn");
     closeBtn.style.color = "red";
+    closeBtn.style.marginTop = "-1vw";
     closeBtn.addEventListener("click", () => {
-      // Remove the card when the X button is clicked
       newCard.remove();
       closeBtn.remove();
     });
@@ -151,7 +152,6 @@ function createCard() {
         }
       });
     }
-
     addEventListeners(plusBtn, minusBtn, productNumDisplay, cardCounter);
   }
 }
