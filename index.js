@@ -111,11 +111,10 @@ function createCard() {
     const closeBtn = document.createElement("div");
     closeBtn.textContent = "\u2715";
     closeBtn.style.userSelect = "none";
-    closeBtn.style.fontSize = "8vw";
+    closeBtn.style.fontSize = "10vw";
     closeBtn.classList.add("close-btn");
     closeBtn.style.color = "red";
-    closeBtn.style.marginLeft = "2vw";
-    closeBtn.style.marginTop = "1%";
+    closeBtn.style.marginTop = "-1vw";
     closeBtn.addEventListener("click", () => {
       // Remove the card when the X button is clicked
       newCard.remove();
@@ -138,21 +137,22 @@ function createCard() {
     productNumValue = 1;
     productNumber.textContent = productNumValue;
 
-    // Add event listeners for new card buttons
-    plusBtn.addEventListener("click", () => {
-      const productNumber = document.getElementById(`product-number${cardCounter}`);
-      let productNumValue = parseInt(productNumber.textContent);
-      productNumValue++;
-      productNumber.textContent = productNumValue;
-    });
-
-    minusBtn.addEventListener("click", () => {
-      const productNumber = document.getElementById(`product-number${cardCounter}`);
-      let productNumValue = parseInt(productNumber.textContent);
-      if (productNumValue > 0) {
-        productNumValue--;
+    function addEventListeners(plusBtn, minusBtn, productNumber, cardCounter) {
+      plusBtn.addEventListener("click", () => {
+        let productNumValue = parseInt(productNumber.textContent);
+        productNumValue++;
         productNumber.textContent = productNumValue;
-      }
-    });
+      });
+
+      minusBtn.addEventListener("click", () => {
+        let productNumValue = parseInt(productNumber.textContent);
+        if (productNumValue > 0) {
+          productNumValue--;
+          productNumber.textContent = productNumValue;
+        }
+      });
+    }
+
+    addEventListeners(plusBtn, minusBtn, productNumDisplay, cardCounter);
   }
 }
