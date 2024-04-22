@@ -114,7 +114,6 @@ function createCard() {
     closeBtn.style.fontSize = "10vw";
     closeBtn.classList.add("close-btn");
     closeBtn.style.color = "red";
-    closeBtn.style.marginTop = "-1vw";
     closeBtn.addEventListener("click", () => {
       // Remove the card when the X button is clicked
       newCard.remove();
