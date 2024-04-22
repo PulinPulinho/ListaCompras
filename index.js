@@ -4,8 +4,13 @@ const minusBtn = document.getElementById("minus-sign");
 const productNumber = document.getElementById("product-number");
 const enterBtn = document.getElementById("enterbtn");
 const cardsContainer = document.getElementById("cards-container");
+const itemCreator = document.getElementById("list-item-creator");
 let productNumValue = 1;
 let cardCounter = 0;
+
+itemCreator.style.display = "flex";
+itemCreator.style.justifyContent = "space-between";
+itemCreator.style.margin = "auto";
 
 plusBtn.addEventListener("click", () => {
   productNumValue++;
@@ -31,6 +36,9 @@ function createCard() {
 
     const newContainer = document.createElement("div");
     newContainer.style.display = "flex";
+    newContainer.style.margin = "auto";
+    newContainer.style.justifyContent = "center";
+    newContainer.style.alignItems = "center";
     
     // Create card container
     const newCard = document.createElement("div");
@@ -38,8 +46,8 @@ function createCard() {
     newCard.style.fontSize = "3vw";
     newCard.style.display = "flex";
     newCard.style.marginTop = "1vh";
+    newCard.style.marginRight = "0px";
     newCard.style.alignItems = "center";
-    newContainer.appendChild(newCard);
 
     // Create card content
     const newItemCard = document.createElement("div");
@@ -85,28 +93,34 @@ function createCard() {
     minusBtn.style.borderRadius = "50%";
     minusBtn.style.backgroundColor = "antiquewhite";
     minusBtn.id = `minus-sign${cardCounter}`;
-
+    
+    // Create "X" symbol
+    const closeBtn = document.createElement("div");
+    closeBtn.textContent = "\u2715";
+    closeBtn.style.userSelect = "none";
+    closeBtn.style.fontSize = "8vw";
+    closeBtn.classList.add("close-btn");
+    closeBtn.style.color = "red";
+    closeBtn.style.marginLeft = "2vw";
+    closeBtn.addEventListener("click", () => {
+      // Remove the card when the X button is clicked
+      newCard.remove();
+      closeBtn.remove();
+    });
+    
     // Append elements
     productCounter.appendChild(plusBtn);
     productCounter.appendChild(productNumDisplay);
     productCounter.appendChild(minusBtn);
     newCard.appendChild(newItemCard);
     newCard.appendChild(productCounter);
-    cardsContainer.insertBefore(newCard, document.getElementById("list-item-creator"));
+    newContainer.appendChild(newCard);
+    newContainer.appendChild(closeBtn);
+    cardsContainer.insertBefore(newContainer, document.getElementById("list-item-creator"));
     
-    // Create "X" symbol
-    const closeBtn = document.createElement("div");
-    closeBtn.textContent = "\u2715";
-    closeBtn.style.userSelect = "none";
-    closeBtn.classList.add("close-btn");
-    closeBtn.style.color = "red";
-    closeBtn.style.marginRight = "3vw";
-    closeBtn.addEventListener("click", () => {
-      // Remove the card when the X button is clicked
-      newCard.remove();
-    });
     
-    newCard.appendChild(closeBtn);
+    
+    
 
     // Reset input value
     productNameInput.value = "";
