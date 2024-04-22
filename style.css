@@ -9,6 +9,7 @@
     aspect-ratio: 5/1;
     border-radius: 5vw;
     width: 50vw;
+    min-width: 250px;
     margin:auto;
     background-color: aliceblue;
     box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
@@ -31,50 +32,63 @@
 
 #product-name{
     aspect-ratio: 1/0.2;
-    width: 20vw;
+    width: 40%;
     border: 1px solid grey;
     border-radius: 5vw;
-    margin-left: 2vw;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     font-size: 3vw;
 }
 #product-name[type="text"]{
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 .product-counter{
     display: flex;
     align-items: center;
+    width: 40%;
     font-size: 5vw;
-    margin-left: 1vw;
+    margin-left: 2.5%;
+    margin-right: 5%;
     user-select: none;
 }
 
 #plus-sign{
     text-align: center;
-    margin: 1vw;
-    width: 6vw;
+    margin: 1.5%;
+    width: 400%;
+    height: 50%;
     border: 1px solid grey;
     border-radius: 50%;
     background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #minus-sign{
     text-align: center;
-    margin: 1vw;
-    width: 6vw;
+    margin: 1.5%;
+    width: 400%;
+    height: 50%;
     border: 1px solid grey;
     border-radius: 50%;
     background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #product-number{
-    margin: 1vw;
+    text-align: center;
+    width: 550%;
+    margin: 1.5%;
 }
 
 #enterbtn{
     user-select: none;
-    font-size: 300%;
-    margin: 2vw;
+    font-size: 10vw;
     font-weight: bold;
 }
