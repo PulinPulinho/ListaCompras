@@ -71,9 +71,10 @@
 
 #enterbtn{
     user-select: none;
-    font-size: 6vw;
+    font-size: 10vw;
     margin-right: 2vw;
     position: absolute;
-    right: 16vw;
-    margin-top: -8vw;
+    right: 12vw;
+    margin-top: -12vw;
+    font-weight: bold;
 }
